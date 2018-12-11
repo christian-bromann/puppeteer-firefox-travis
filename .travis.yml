@@ -11,6 +11,3 @@ install:
 cache:
   directories:
   - "$HOME/.npm"
-
-scripts:
-- node test.js
