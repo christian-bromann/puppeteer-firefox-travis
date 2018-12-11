@@ -1,0 +1,23 @@
+{
+  "name": "puppeteer-firefox-travis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mogztter/puppeteer-firefox-travis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mogztter/puppeteer-firefox-travis/issues"
+  },
+  "homepage": "https://github.com/Mogztter/puppeteer-firefox-travis#readme",
+  "devDependencies": {
+    "puppeteer-firefox": "0.4.2"
+  }
+}

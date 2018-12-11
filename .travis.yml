@@ -1,0 +1,16 @@
+dist: trusty
+
+language: node_js
+
+node_js:
+- 'lts/*'
+- 'node'
+
+install:
+- npm ci
+cache:
+  directories:
+  - "$HOME/.npm"
+
+scripts:
+- node test.js
