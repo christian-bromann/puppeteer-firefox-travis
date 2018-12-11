@@ -1,5 +1,5 @@
 /* eslint-env node, es6 */
-const puppeteer = require('puppeteer-firefox')
+const puppeteer = require('puppeteer-firefox');
 
 (async function () {
   try {
