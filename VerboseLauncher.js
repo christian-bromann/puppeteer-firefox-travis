@@ -116,7 +116,7 @@ class Launcher {
         }
       });
     });
-    waitForFirefoxToClose()
+
 
     const listeners = [ helper.addEventListener(process, 'exit', killFirefox) ];
     if (handleSIGINT)
@@ -139,6 +139,7 @@ class Launcher {
       return browser;
     } catch (e) {
       console.log('Something bad happened', e);
+      await waitForFirefoxToClose
       killFirefox();
       throw e;
     }
