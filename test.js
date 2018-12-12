@@ -1,7 +1,15 @@
 /* eslint-env node, es6 */
 const puppeteer = require('puppeteer-firefox');
 
-(async function () {
+const fs = require('fs')
+
+// monkey patch
+let content = fs.readFileSync('node_modules/puppeteer-firefox/lib/firefox/Launcher.js', 'utf-8')
+console.log(content)
+content = content.replace(/(function onClose\(error\) {\n\s+cleanup\(\);)(\n\s+)(reject)/g, '$1$2console.log("error", error);$2$3')
+fs.writeFileSync('node_modules/puppeteer-firefox/lib/firefox/Launcher.js', content, 'utf-8')
+
+;(async function () {
   try {
     console.log('puppeteer.launch')
     const browser = await puppeteer.launch({dumpio: true});
