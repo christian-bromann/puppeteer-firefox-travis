@@ -17,6 +17,7 @@ install:
 - npm ci
 
 script:
+- node patch.js
 - XAUTHORITY= npm test
 
 cache:
