@@ -1,12 +1,10 @@
 /* eslint-env node, es6 */
 const puppeteer = require('puppeteer-firefox');
-
 const fs = require('fs')
 
 // monkey patch
 let content = fs.readFileSync('node_modules/puppeteer-firefox/lib/firefox/Launcher.js', 'utf-8')
-console.log(content)
-content = content.replace(/(function onClose\(error\) {\n\s+cleanup\(\);)(\n\s+)(reject)/g, '$1$2console.log("error", error);$2$3')
+content = content.replace(/('Failed to launch Firefox!' \+ \(error \? ' ' \+ )(error\.message)( : )('')\)/g, '$1error$3\'no-error\')')
 fs.writeFileSync('node_modules/puppeteer-firefox/lib/firefox/Launcher.js', content, 'utf-8')
 
 ;(async function () {
