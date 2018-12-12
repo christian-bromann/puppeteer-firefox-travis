@@ -15,6 +15,10 @@ before_install:
 
 install:
 - npm ci
+
+script:
+- XAUTHORITY= npm test
+
 cache:
   directories:
   - "$HOME/.npm"
