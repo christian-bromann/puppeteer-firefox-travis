@@ -9,6 +9,10 @@ node_js:
 - 'lts/*'
 - 'node'
 
+before_install:
+# Enable user namespace cloning
+- "sysctl kernel.unprivileged_userns_clone=1"
+
 install:
 - npm ci
 cache:
