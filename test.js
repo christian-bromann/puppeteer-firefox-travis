@@ -3,8 +3,12 @@ const puppeteer = require('puppeteer-firefox');
 
 (async function () {
   try {
-    const browser = await puppeteer.launch();
+    console.log('puppeteer.launch')
+    const browser = await puppeteer.launch({dumpio: true});
+    console.log('puppeteer launched', browser)
+    console.log('browser.newPage')
     const page = await browser.newPage();
+    console.log('puppeteer page', page)
     browser.on('error', (err) => console.log('err', err));
     page.on('error', (err) => console.log('err', err));
     await page.goto('https://www.google.fr', {});
