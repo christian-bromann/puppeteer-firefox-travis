@@ -4,23 +4,21 @@ language: node_js
 
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test # if we don't specify this, the libstdc++6 we get is the wrong version
     packages:
-    - libstdc++6
+      - libstdc++6
 
 node_js:
 - 'lts/*'
 - 'node'
-
-before_install:
-# Enable user namespace cloning
-- "sysctl kernel.unprivileged_userns_clone=1"
 
 install:
 - npm ci
 
 script:
 - node patch.js
-- XAUTHORITY= npm test
+- npm test
 
 cache:
   directories:
