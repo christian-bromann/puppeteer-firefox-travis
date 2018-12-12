@@ -9,9 +9,7 @@ addons:
     packages:
       - libstdc++6
 
-node_js:
-- 'lts/*'
-- 'node'
+node_js: 'lts/*'
 
 install:
 - npm ci

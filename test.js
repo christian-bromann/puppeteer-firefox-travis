@@ -1,9 +1,11 @@
 /* eslint-env node, es6 */
 const puppeteer = require('puppeteer-firefox');
-const childProcess = require('child_process');
 
+/*
+const childProcess = require('child_process');
 const executablePath = puppeteer.executablePath()
 childProcess.execSync(executablePath + ' -headless')
+*/
 
 (async function () {
   try {
