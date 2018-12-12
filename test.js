@@ -1,7 +1,11 @@
 /* eslint-env node, es6 */
 const puppeteer = require('puppeteer-firefox');
+const childProcess = require('child_process');
 
-;(async function () {
+const executablePath = puppeteer.executablePath()
+childProcess.execSync(executablePath + ' -headless')
+
+(async function () {
   try {
     console.log('puppeteer.launch')
     const browser = await puppeteer.launch({dumpio: true});
