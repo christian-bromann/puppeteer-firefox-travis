@@ -21,6 +21,7 @@ childProcess.execSync(executablePath + ' -headless')
     browser.on('error', (err) => console.log('err', err));
     page.on('error', (err) => console.log('err', err));
     await page.goto('https://www.google.fr', {});
+    console.log('Page url is', await page.title());
     await page.close();
     await browser.close();
     console.log('Everything ran successfully!');
