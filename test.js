@@ -14,10 +14,10 @@ childProcess.execSync(executablePath + ' -headless')
       dumpio: true,
       product: 'firefox'
     });
-    console.log('puppeteer launched', browser)
+    console.log('puppeteer launched')
     console.log('browser.newPage')
     const page = await browser.newPage();
-    console.log('puppeteer page', page)
+    console.log('puppeteer page')
     browser.on('error', (err) => console.log('err', err));
     page.on('error', (err) => console.log('err', err));
     await page.goto('https://www.google.fr', {});
