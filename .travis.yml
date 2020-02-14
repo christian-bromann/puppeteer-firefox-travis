@@ -5,13 +5,12 @@ language: node_js
 addons:
   firefox: latest
 
-node_js: 'lts/*'
+node_js: 10
 
 install:
 - npm ci
 
 script:
-# - node patch.js
 - npm test
 
 cache:
