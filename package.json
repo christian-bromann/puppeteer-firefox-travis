@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/Mogztter/puppeteer-firefox-travis#readme",
   "devDependencies": {
-    "puppeteer-firefox": "0.4.2"
+    "puppeteer": "^2.1.1"
   }
 }

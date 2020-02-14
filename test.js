@@ -1,5 +1,5 @@
 /* eslint-env node, es6 */
-const puppeteer = require('puppeteer-firefox');
+const puppeteer = require('puppeteer');
 
 /*
 const childProcess = require('child_process');
@@ -10,7 +10,10 @@ childProcess.execSync(executablePath + ' -headless')
 (async function () {
   try {
     console.log('puppeteer.launch')
-    const browser = await puppeteer.launch({dumpio: true});
+    const browser = await puppeteer.launch({
+      dumpio: true,
+      product: 'firefox'
+    });
     console.log('puppeteer launched', browser)
     console.log('browser.newPage')
     const page = await browser.newPage();
@@ -20,6 +23,7 @@ childProcess.execSync(executablePath + ' -headless')
     await page.goto('https://www.google.fr', {});
     await page.close();
     await browser.close();
+    console.log('Everything ran successfully!');
   } catch (err) {
     console.error('Unable to run tests using Puppeteer', err);
     process.exit(1);
@@ -28,4 +32,3 @@ childProcess.execSync(executablePath + ' -headless')
   console.error('Unable to launch Firefox with Puppeteer', err);
   process.exit(1);
 });
-
